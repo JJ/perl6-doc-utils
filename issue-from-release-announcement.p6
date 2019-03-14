@@ -15,8 +15,8 @@ my @parts = $document.split("\n  +");
 
 my $additions-removals = @parts[2,3];
 
-$additions-removals ~~  s:g/\s\s\s\+\s/    + [ ] /;
-$additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "[$0](https://github.com/rakudo/rakudo/commit/$0)";
-			    
+$additions-removals ~~  s:g/\s\s\s\+\s/* [ ] /;
+$additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "-[$0](https://github.com/rakudo/rakudo/commit/$0)";
+print $additions-removals;			    
 
 
