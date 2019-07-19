@@ -1,4 +1,5 @@
- Additions:
+
+#  Additions:
  * [ ] Added an `X::Cannot::Map` exception -[fd8a00a3](https://github.com/rakudo/rakudo/commit/fd8a00a3)-[ef8899f6](https://github.com/rakudo/rakudo/commit/ef8899f6)-[a804ed0f](https://github.com/rakudo/rakudo/commit/a804ed0f)
  * [ ] Telemetry's `snap` now also accepts an optional
         "checkpoint" message -[afc9f849](https://github.com/rakudo/rakudo/commit/afc9f849)
@@ -16,7 +17,8 @@
         candidate for introspection; if there is no such candidate then
         the first one would be chosen -[6c023546](https://github.com/rakudo/rakudo/commit/6c023546)
  * [ ] Added `--confprog`, a way to configure the behavior of some
-        moarvm-internal systems like the profiler -[97334711](https://github.com/rakudo/rakudo/commit/97334711)  Removals:
+        moarvm-internal systems like the profiler -[97334711](https://github.com/rakudo/rakudo/commit/97334711) 
+#  Removals:
  * [ ] Removed `:where` support for `Signature/Parameter.perl` -[4cfe5ec1](https://github.com/rakudo/rakudo/commit/4cfe5ec1)
  * [ ] Removed several internal functions from `CORE::` and
         `SETTING::` namespaces -[45eb1c5f](https://github.com/rakudo/rakudo/commit/45eb1c5f)-[ed074cd1](https://github.com/rakudo/rakudo/commit/ed074cd1)-[80185031](https://github.com/rakudo/rakudo/commit/80185031)-[bf57f762](https://github.com/rakudo/rakudo/commit/bf57f762)
