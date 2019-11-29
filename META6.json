@@ -1,0 +1,16 @@
+{
+  "name": "Raku::Docs::Utils",
+  "description": "Utilities related to raku docs",
+  "version": "0.0.1",
+  "perl": "6.*",
+  "authors": [
+    "JJ Merelo"
+  ],
+  "auth": "github:JJ",
+  "depends": [
+    "LWP::Simple"
+  ],
+  "build-depends": [],
+  "license": "Artistic-2.0",
+  "source-url": "https://github.com/JJ/perl6-doc-utils.git"
+}
