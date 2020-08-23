@@ -1,0 +1,11 @@
+
+#  Changes:
+ * [ ] Methods `name` and `usage-name` of `Parameter` now return an empty `Str`,
+      when there is no name, instead of `Nil`. Method `default` returns `Code` type object,
+      when no default was provided instead of `Any` type object -[c11f4b18](https://github.com/rakudo/rakudo/commit/c11f4b18)
+ * [ ] Remove redundant `(())` from `Map.new.raku` -[491e1def](https://github.com/rakudo/rakudo/commit/491e1def)
+ * [ ] Routine `done-testing` of `Test` module returns `Bool` now,
+      indicating if the tests passed or not -[337848fe](https://github.com/rakudo/rakudo/commit/337848fe) 
+#  Additions:
+ * [ ] Add `set_parameterizer`, `parameterize_type`, `type_parameterized`,
+      `type_parameters` and `type_parameter_at` methods for `Metamodel::Primitives` -[2ab94429](https://github.com/rakudo/rakudo/commit/2ab94429)
