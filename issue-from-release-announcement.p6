@@ -13,7 +13,7 @@ my $document = LWP::Simple.get("https://raw.githubusercontent.com/rakudo/rakudo/
 
 my @parts = $document.split("\n  +");
 
-my $additions-removals = @parts[1,4].map: "\n# " ~ * ;
+my $additions-removals = @parts[1].map: "\n# " ~ * ;
 
 $additions-removals ~~  s:g/\s\s\s\+\s/* [ ] /;
 $additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "-[$0](https://github.com/rakudo/rakudo/commit/$0)";
