@@ -7,13 +7,13 @@ use v6;
 
 use LWP::Simple;
 
-my $release = @*ARGS[0] // "2019.03";
+my $release = @*ARGS[0] // "2020.10";
 
 my $document = LWP::Simple.get("https://raw.githubusercontent.com/rakudo/rakudo/master/docs/announce/$release.md");
 
 my @parts = $document.split("\n  +");
 
-my $additions-removals = @parts[1,3,4].map: "\n# " ~ * ;
+my $additions-removals = @parts[1,2].map: "\n# " ~ * ;
 
 $additions-removals ~~  s:g/\s\s\s\+\s/* [ ] /;
 $additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "-[$0](https://github.com/rakudo/rakudo/commit/$0)";
