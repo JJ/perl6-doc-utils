@@ -11,6 +11,8 @@ my $release = @*ARGS[0] // "2020.10";
 
 my $document = LWP::Simple.get("https://raw.githubusercontent.com/rakudo/rakudo/master/docs/announce/$release.md");
 
+die "Can't download $release" unless $document;
+
 my @parts = $document.split("\n  +");
 
 my $additions-removals = @parts[1,2,3].map: "\n# " ~ * ;
