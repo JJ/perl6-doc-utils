@@ -1,4 +1,4 @@
-#!/usr/bin/env raku
+#!/usr/bin/env perl
 
 use v6;
 
