@@ -19,6 +19,8 @@ my $additions-removals = @parts[1,2,4].map: "\n# " ~ * ;
 
 $additions-removals ~~  s:g/\s ** 3\+\s/* [ ] /;
 $additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "-[$0](https://github.com/rakudo/rakudo/commit/$0)";
-print $additions-removals;
-
+say qq:to/EOC/;
+[Original announcement](https://github.com/rakudo/rakudo/blob/master/docs/announce/$release.md)
+$additions-removals;
+EOC
 
