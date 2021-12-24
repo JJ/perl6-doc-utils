@@ -11,11 +11,15 @@ my $release = @*ARGS[0] // "2021.12";
 
 my $document = LWP::Simple.get("https://raw.githubusercontent.com/rakudo/rakudo/master/docs/announce/$release.md");
 
+die "Can't download $release" unless $document;
+
 my @parts = $document.split("\n\n+");
 my $additions-removals = @parts[2,3].map: "\n# " ~ * ;
 
-$additions-removals ~~  s:g/\s\s\s\+\s/* [ ] /;
+$additions-removals ~~  s:g/\s ** 3\+\s/* [ ] /;
 $additions-removals ~~ s:g[ \[(<alnum>+)\] ] =  "-[$0](https://github.com/rakudo/rakudo/commit/$0)";
-print $additions-removals;
-
+say qq:to/EOC/;
+[Original announcement](https://github.com/rakudo/rakudo/blob/master/docs/announce/$release.md)
+$additions-removals;
+EOC
 
